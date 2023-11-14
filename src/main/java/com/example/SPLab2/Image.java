@@ -1,6 +1,7 @@
 package com.example.SPLab2;
 
-public class Image {
+
+public class Image implements Element {
     private String imageName;
 
     public Image(String imageName) {
@@ -20,5 +21,25 @@ public class Image {
         return "Image{" +
                 "imageName='" + imageName + '\'' +
                 '}';
+    }
+
+    @Override
+    public void add(Element element) {
+
+    }
+
+    @Override
+    public void remove(Element element) {
+
+    }
+
+    @Override
+    public Element get(int index) {
+        return null;
+    }
+
+    @Override
+    public void print() {
+
     }
 }

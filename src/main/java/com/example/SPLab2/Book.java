@@ -3,49 +3,51 @@ package com.example.SPLab2;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Book {
-    private String title;
-    private Author author;
-    private List<Chapter> chapters;
+public class Book extends Section{
 
-    public Book(){};
+    private List<Author> authors;
+    private List<Section> sections;
 
-    public Book(String title, Author author) {
-        this.title = title;
-        this.author = author;
-        this.chapters = new ArrayList<>();
+    public Book(String title) {
+        super(title);
+        this.authors = new ArrayList<>();
+        this.sections = new ArrayList<>();
     }
 
-    public String getTitle() {
-        return title;
+
+    public List<Author> getAuthors() {
+        return authors;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void addAuthor(Author author) {
+        authors.add(author);
     }
 
-    public Author getAuthor(){
-        return author;
+    public List<Section> getSections() {
+        return sections;
     }
 
-    public List<Chapter> getChapters() {
-        return chapters;
+    public void addSection(Section section) {
+        sections.add(section);
     }
 
-    public void addChapter(Chapter chapter) {
-        this.chapters.add(chapter);
+    public void addContent(Element e) {
+        super.add(e);
     }
 
     @Override
-    public String toString() {
-        return "Book: " +
-                "title=" + title + ", " +
-                "author=" + getAuthor() + '\n' +
-                "chapters= " +getChapters();
-    }
+    public void print() {
+        System.out.println("Book: " + super.title);
+        System.out.println("Authors: ");
+        for (Author author : authors) {
+            author.print();
+        }
 
-    public TableOfContents getTableOfContents() {
-        return new TableOfContents();
+        System.out.println();
+
+        for (Element c : super.subsections) {
+            c.print();
+        }
     }
 }
 

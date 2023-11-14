@@ -1,24 +1,29 @@
 package com.example.SPLab2;
 
-public class Paragraph {
+public class Paragraph implements Element {
     private String text;
 
     public Paragraph(String text) {
         this.text = text;
     }
 
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
+    @Override
+    public void print() {
+        System.out.println("Paragraph: " + text);
     }
 
     @Override
-    public String toString() {
-        return "Paragraph{" +
-                "text='" + text + '\'' +
-                '}';
+    public void add(Element e) {
+        this.add(e);
+    }
+
+    @Override
+    public void remove(Element e) {
+        this.remove(e);
+    }
+
+    @Override
+    public Element get(int index) {
+        return this.get(index);
     }
 }
