@@ -1,11 +1,20 @@
 package com.example.SPLab2;
 
 
+import java.util.concurrent.TimeUnit;
+
 public class Image implements Element {
     private String imageName;
 
     public Image(String imageName) {
-        this.imageName = imageName;
+
+//        this.imageName = imageName;
+            imageName = imageName;
+            try {
+                TimeUnit.SECONDS.sleep(5);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
     }
 
     public String getImageName() {
@@ -42,4 +51,6 @@ public class Image implements Element {
     public void print() {
 
     }
+
+
 }
