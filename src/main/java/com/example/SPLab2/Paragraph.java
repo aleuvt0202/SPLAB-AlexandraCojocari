@@ -17,6 +17,7 @@ public class Paragraph implements Element {
         this.add(e);
     }
 
+
     @Override
     public void remove(Element e) {
         this.remove(e);

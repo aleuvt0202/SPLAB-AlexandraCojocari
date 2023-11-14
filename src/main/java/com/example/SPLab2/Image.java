@@ -3,33 +3,16 @@ package com.example.SPLab2;
 
 import java.util.concurrent.TimeUnit;
 
-public class Image implements Element {
+public class Image implements Element{
     private String imageName;
 
     public Image(String imageName) {
-
-//        this.imageName = imageName;
-            imageName = imageName;
-            try {
-                TimeUnit.SECONDS.sleep(5);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-    }
-
-    public String getImageName() {
-        return imageName;
-    }
-
-    public void setImageName(String imageName) {
         this.imageName = imageName;
-    }
-
-    @Override
-    public String toString() {
-        return "Image{" +
-                "imageName='" + imageName + '\'' +
-                '}';
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -47,10 +30,14 @@ public class Image implements Element {
         return null;
     }
 
-    @Override
+    // crate a print method
     public void print() {
-
+        System.out.println("Image with name: " + imageName);
     }
 
 
+
 }
+
+
+

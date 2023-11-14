@@ -25,6 +25,7 @@ public class Section implements Element{
         subsections.add(element);
     }
 
+
     @Override
     public void remove(Element element) {
         subsections.remove(element);
