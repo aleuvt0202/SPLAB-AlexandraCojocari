@@ -3,20 +3,25 @@ package com.example.SPLab2;
 public class Paragraph implements Element {
     private String text;
 
+    private AlignStrategy alignStrategy;
+
     public Paragraph(String text) {
         this.text = text;
+        alignStrategy = null;
     }
 
     @Override
     public void print() {
-        System.out.println("Paragraph: " + text);
+        if (alignStrategy != null)
+            alignStrategy.render(text);
+        else
+            System.out.println("Paragraph: " + text);
     }
 
     @Override
     public void add(Element e) {
         this.add(e);
     }
-
 
     @Override
     public void remove(Element e) {
@@ -26,5 +31,10 @@ public class Paragraph implements Element {
     @Override
     public Element get(int index) {
         return this.get(index);
+    }
+
+
+    public void setAlignStrategy(AlignStrategy alignStrategy) {
+        this.alignStrategy = alignStrategy;
     }
 }
