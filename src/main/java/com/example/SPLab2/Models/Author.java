@@ -1,4 +1,4 @@
-package com.example.SPLab2;
+package com.example.SPLab2.Models;
 
 import java.util.List;
 

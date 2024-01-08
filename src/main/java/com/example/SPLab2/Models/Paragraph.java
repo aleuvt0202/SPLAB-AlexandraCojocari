@@ -1,5 +1,8 @@
-package com.example.SPLab2;
+package com.example.SPLab2.Models;
 
+import com.example.SPLab2.Models.Element;
+import com.example.SPLab2.Services.AlignStrategy;
+import com.example.SPLab2.Services.Visitor;
 public class Paragraph implements Element {
     private String text;
 
@@ -36,5 +39,10 @@ public class Paragraph implements Element {
 
     public void setAlignStrategy(AlignStrategy alignStrategy) {
         this.alignStrategy = alignStrategy;
+    }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visitParagraph(this);
     }
 }

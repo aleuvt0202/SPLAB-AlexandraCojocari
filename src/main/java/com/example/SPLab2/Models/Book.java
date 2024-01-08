@@ -1,34 +1,17 @@
-package com.example.SPLab2;
+package com.example.SPLab2.Models;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Book extends Section{
-
-    private List<Author> authors;
-    private List<Section> sections;
+public class Book extends Section {
+    private List<Author> authors = new ArrayList<>();
 
     public Book(String title) {
         super(title);
-        this.authors = new ArrayList<>();
-        this.sections = new ArrayList<>();
-    }
-
-
-    public List<Author> getAuthors() {
-        return authors;
     }
 
     public void addAuthor(Author author) {
         authors.add(author);
-    }
-
-    public List<Section> getSections() {
-        return sections;
-    }
-
-    public void addSection(Section section) {
-        sections.add(section);
     }
 
     public void addContent(Element e) {
@@ -45,7 +28,7 @@ public class Book extends Section{
 
         System.out.println();
 
-        for (Element c : super.subsections) {
+        for (Element c : super.children) {
             c.print();
         }
     }
